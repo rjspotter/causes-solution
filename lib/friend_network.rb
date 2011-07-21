@@ -33,7 +33,7 @@ class FriendNetwork
 
   def initialize(seed = '', hay = [])
     # load the haystack, setup the seed as the first hit, initialize friends as empty
-    @haystack,@hits,@friends = hay,[seed],[]
+    @haystack,@hits,@friends,@st = hay,[seed],[],Time.now.to_i
     # using a while loop because we want to keep going until no more hits are found
     while @hits.length > 0 do
       # get the value we're going to process, remove it from the hits, add it to the finished friends
@@ -46,6 +46,7 @@ class FriendNetwork
       puts "working on #{working}, #{hits.length} hits to go, haystack is #{haystack.length} long"
     end
     # remove the seed from the friends list
+    puts (Time.now.to_i - @st).to_s + " seconds run time"
     @friends -= [seed]
   end
 
