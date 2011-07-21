@@ -26,8 +26,8 @@ end
 class FriendNetwork
 
   # state holders 
-  # friends have had thier friends found
-  # hits are friends that haven't had thier friends found
+  # friends have had their friends found
+  # hits are friends that haven't had their friends found
   # haystack is the un-matched list
   attr_accessor :friends, :hits, :haystack
 
